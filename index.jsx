@@ -9,6 +9,8 @@ import * as Time from './lib/components/data/time.jsx'
 import * as DateDisplay from './lib/components/data/date-display.jsx'
 // import * as Weather from './lib/components/data/weather.jsx'
 import * as Battery from './lib/components/data/battery.jsx'
+import * as Memory from './lib/components/data/memory.jsx'
+import * as NaturalScroll from './lib/components/data/natural-scroll.jsx'
 import * as Sound from './lib/components/data/sound.jsx'
 import * as Mic from './lib/components/data/mic.jsx'
 import * as Wifi from './lib/components/data/wifi.jsx'
@@ -50,6 +52,8 @@ Utils.injectStyles('simple-bar-spaces-styles', [
   // Crypto.styles,
   // Stock.styles,
   Battery.styles,
+  Memory.styles,
+  NaturalScroll.styles,
   Wifi.styles,
   // ViscosityVPN.styles,
   Keyboard.styles,
@@ -100,6 +104,8 @@ const render = ({ output, error }) => {
       <Spaces.Component spaces={spaces} windows={windows} SIP={SIP} displayIndex={displayIndex} />
       {processWidget && <Process.Component displayIndex={displayIndex} spaces={spaces} windows={windows} />}
       <div className="simple-bar__data">
+        <NaturalScroll.Widget />
+        <Memory.Widget />
         <Settings.Wrapper />
         <UserWidgets />
         {/* <Zoom.Widget />
@@ -110,10 +116,10 @@ const render = ({ output, error }) => {
         <Music.Widget />
         <Mpd.Widget />
         <Weather.Widget /> */}
-        <Battery.Widget />
         <Mic.Widget />
         <Sound.Widget />
         {/* <ViscosityVPN.Widget /> */}
+        <Battery.Widget />
         <Wifi.Widget />
         <Keyboard.Widget />
         <DateDisplay.Widget />

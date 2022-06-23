@@ -30,6 +30,8 @@ Recommended configuration so far:
 - Settings module (enable/disable each individual widget: see list below - switch dark/light theme) (1)
 - Spotify, Music/iTunes, browser current track (3)
 - Battery, microphone, sound level, wifi, date, time widgets
+- Memory pressure indicator
+- Natural scroll direction indicator / switcher
 - Dnd, crypto, weather & keyboard language input widgets (disabled by default) (4)
 - You can add your own custom widgets in settings (1)
 - **Only with SIP disabled**: create new workspace on "+" click, move or destroy workspace on space hover
