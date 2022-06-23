@@ -15,13 +15,14 @@ const OpenedApps = ({ apps }) => {
       'has-fullscreen-zoom': hasFullscreenZoom,
       'zoom-fullscreen': __legacyHasFullscreenZoom
     } = app
-    if (isMinimized ?? __legacyIsMinimized) return null
+    // if (isMinimized ?? __legacyIsMinimized) return null // 
 
     const Icon = AppIcons.apps[appName] || AppIcons.apps.Default
     const classes = Utils.classnames('space__icon', {
       'space__icon--focused': hasFocus ?? __legacyHasFocus,
       'space__icon--fullscreen':
-        (hasParentZoom ?? __legacyHasParentZoom) || (hasFullscreenZoom ?? __legacyHasFullscreenZoom)
+        (hasParentZoom ?? __legacyHasParentZoom) || (hasFullscreenZoom ?? __legacyHasFullscreenZoom),
+      'space__icon--minimized': isMinimized || __legacyIsMinimized
     })
     return <Icon className={classes} key={i} />
   })
