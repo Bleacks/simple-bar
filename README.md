@@ -6,6 +6,17 @@ A [yabai](https://github.com/koekeishiya/yabai) status bar widget for [Übersich
 
 A more "lite" & less ressource greedy version is available [here](https://github.com/Jean-Tinland/simple-bar-lite).
 
+# This fork (WIP)
+
+Recommended configuration so far:
+
+- Theme: Neon-Tokyo
+- Macbook M1 14" (notch)
+- Floating bar
+- No background
+- Compact mode
+- Global font: Avenir Light (12px)
+
 ## Features
 
 - 3 themes behaviours: dark, light or automatic (synced with system)
@@ -55,7 +66,7 @@ You'll find more information & images on [simple-bar website](https://www.simple
 Clone this repo to your Übersicht widgets directory with the following command.
 
 ```bash
-$ git clone https://github.com/Jean-Tinland/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
+$ git clone https://github.com/Bleacks/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
 ```
 
 **Becareful, the folder containing the widget must be name `simple-bar`, otherwise, simple-bar will never launch.**
@@ -144,6 +155,29 @@ export const appIcons = {
 If there is no icon defined for a running process, there is a default one which will be used as fallback.
 
 Same as for themes, feel free to post a message in [this issue](https://github.com/Jean-Tinland/simple-bar/issues/189) if you have an icon request.
+
+#### Icon libraries
+
+##### SVG Viewer
+
+Browse to [SVG Viewer](https://www.svgviewer.dev) and search for an icon
+
+Make sure size is set to 24px x 24px and copy all `<path ... />` elements
+
+##### React-icons
+
+- Install asdf and install dependencies from .tool-versions
+
+- Install node dependencies for missing icons
+
+```sh
+npm install react-icons --save
+```
+
+- Browse on [react-icons](https://react-icons.github.io/react-icons/) and find the one you want (ex: FaBeer)
+
+- Find the SVG config within `node_modules/react-icons/<collectionName>/index.js` and get the `<path ... />` value 
+
 
 ### Override default styles
 

@@ -1414,7 +1414,11 @@ export const Uebersicht = (props) => (
   </Icon>
 )
 
-
+export const Unfold = (props) => (
+  <Icon {...props}>
+    <path d="M17.706 12.707l-9 9a1.001 1.001 0 1 1 -1.414 -1.414L15.585 12 7.292 3.707A1.001 1.001 0 1 1 8.706 2.293l9 9A1.001 1.001 0 0 1 17.706 12.707Z"/>
+  </Icon>
+)
 
 export const Default = (props) => (
   <Icon {...props}>
