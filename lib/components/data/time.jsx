@@ -16,10 +16,10 @@ const { refreshFrequency, hour12, dayProgress, showSeconds } = timeWidgetOptions
 const DEFAULT_REFRESH_FREQUENCY = 1000
 const REFRESH_FREQUENCY = Settings.getRefreshFrequency(refreshFrequency, DEFAULT_REFRESH_FREQUENCY)
 
-const displayNotificationCenter = () =>
-  Uebersicht.run(
-    `osascript -e 'tell application "System Events" to click menu bar item "Clock" of menu bar 1 of application process "ControlCenter"'`
-  )
+// const displayNotificationCenter = () =>
+//   Uebersicht.run(
+//     `osascript -e 'tell application "System Events" to click menu bar item "Clock" of menu bar 1 of application process "ControlCenter"'`
+//   )
 
 export const Widget = () => {
   const [state, setState] = Uebersicht.React.useState()
@@ -45,20 +45,31 @@ export const Widget = () => {
   const { time } = state
 
   const [dayStart, dayEnd] = [new Date(), new Date()]
-  dayStart.setHours(0, 0, 0)
-  dayEnd.setHours(0, 0, 0)
-  dayEnd.setDate(dayEnd.getDate() + 1)
+  const businessHours = true // TODO: Replace
+  // if businessHours == true {
+    const progressColor = 'red'
+    dayStart.setHours(0, 0, 0)
+    dayEnd.setHours(0, 0, 0)
+    dayEnd.setDate(dayEnd.getDate() + 1)
+  // } 
+  // else {
+  //   dayEnd.setHours(0, 0, 0)
+  //   dayStart.setHours(0, 0, 0)
+  //   dayStart.setDate(dayStart.getDate() + 1)
+  // }
   const range = dayEnd - dayStart
   const diff = Math.max(0, dayEnd - new Date())
   const fillerWidth = (100 - (100 * diff) / range) / 100
 
-  const onClick = (e) => {
-    Utils.clickEffect(e)
-    displayNotificationCenter()
-  }
+  // FIXME: osascript for displayNotificationCenter not working anymore
+  // const onClick = (e) => {
+  //   Utils.clickEffect(e)
+  //   displayNotificationCenter()
+  // }
 
   return (
-    <DataWidget.Widget classes="time" Icon={Icons.Clock} onClick={onClick} disableSlider>
+    // <DataWidget.Widget classes="time" Icon={Icons.Clock} onClick={onClick} disableSlider>
+    <DataWidget.Widget classes="time" Icon={Icons.Clock} disableSlider>
       {time}
       {dayProgress && <div className="time__filler" style={{ transform: `scaleX(${fillerWidth})` }} />}
     </DataWidget.Widget>

@@ -8,6 +8,8 @@ A more "lite" & less ressource greedy version is available [here](https://github
 
 # This fork (WIP)
 
+Purpose is to improve yabai support and feature further, to help and bring support to M1/2 Macbooks that was lacking from original project and experiment with Übersicht 
+
 Recommended configuration so far:
 
 - Theme: Neon-Tokyo
@@ -16,6 +18,12 @@ Recommended configuration so far:
 - No background
 - Compact mode
 - Global font: Avenir Light (12px)
+
+**This project isn't supported anymore**
+
+To my despair, Ubersicht don't seem to be updated anymore, and recently an update broke my installation, being unable to run Übersicht, I'm hence forced to move on and decided to now focus on implementing a similar featureset on Sketchybar
+Last commit contain unverified changes as project was still in WIP at the time Übersicht stopped working
+
 
 ## Features
 
